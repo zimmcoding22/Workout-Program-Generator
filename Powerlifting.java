@@ -1,7 +1,6 @@
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -40,37 +39,37 @@ public class Powerlifting extends JFrame {
    public Powerlifting() throws Exception {
     //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	   b = new JButton("calculate");
-       b.addActionListener(new ActionListener() {
+	   b.addActionListener(new ActionListener() {
     	   public void actionPerformed(ActionEvent e) {
-				DeadliftMax = Integer.parseInt(maxDeadlift.getText());
-				System.out.println("the max deadlift: " + DeadliftMax);
-				PullUpMax = Integer.parseInt(maxPullups.getText());
-				System.out.println("the max pullup is: " + PullUpMax);
-				BenchMax = Integer.parseInt(maxBench.getText());
-				System.out.println("the max bench: " + BenchMax);
-				DipMax = Integer.parseInt(maxDips.getText());
-				System.out.println("the max dips: " + DipMax);
-				SquatMax = Integer.parseInt(maxSquat.getText());
-				System.out.println("the max squat: " + SquatMax);
-				OHPMax = Integer.parseInt(maxOHP.getText());
-				System.out.println("the max OHP is: " + OHPMax);
-      }
-    });
+		DeadliftMax = Integer.parseInt(maxDeadlift.getText());
+		System.out.println("the max deadlift: " + DeadliftMax);
+		PullUpMax = Integer.parseInt(maxPullups.getText());
+		System.out.println("the max pullup is: " + PullUpMax);
+		BenchMax = Integer.parseInt(maxBench.getText());
+		System.out.println("the max bench: " + BenchMax);
+		DipMax = Integer.parseInt(maxDips.getText());
+		System.out.println("the max dips: " + DipMax);
+		SquatMax = Integer.parseInt(maxSquat.getText());
+		System.out.println("the max squat: " + SquatMax);
+		OHPMax = Integer.parseInt(maxOHP.getText());
+		System.out.println("the max OHP is: " + OHPMax);
+	   }
+    	});
 	panel.add(new JLabel("Enter max deadlift:"));
-    panel.add(maxDeadlift);
-    panel.add(new JLabel("Enter max pullups:"));
-    panel.add(maxPullups);
-    panel.add(new JLabel("Enter max bench:"));
-    panel.add(maxBench);
-    panel.add(new JLabel("Enter max dips:"));
-    panel.add(maxDips);
-    panel.add(new JLabel("Enter max squat:"));
-    panel.add(maxSquat);
-    panel.add(new JLabel("Enter max OHP:"));
-    panel.add(maxOHP);
-    panel.add(b);
+	panel.add(maxDeadlift);
+	panel.add(new JLabel("Enter max pullups:"));
+	panel.add(maxPullups);
+	panel.add(new JLabel("Enter max bench:"));
+	panel.add(maxBench);
+	panel.add(new JLabel("Enter max dips:"));
+	panel.add(maxDips);
+	panel.add(new JLabel("Enter max squat:"));
+	panel.add(maxSquat);
+	panel.add(new JLabel("Enter max OHP:"));
+	panel.add(maxOHP);
+	panel.add(b);
 
-    JOptionPane.showMessageDialog(null, panel, "Fill in values", 2);
+        JOptionPane.showMessageDialog(null, panel, "Fill in values", 2);
    
    }
    //sets given weaknesses. Both of these instructors are invoked in main
@@ -88,8 +87,8 @@ public class Powerlifting extends JFrame {
 		Spreadsheet.SpreadSheet();
    }
    
-   private static String SquatReps() {
-	   String REPS;	
+	private static String SquatReps() {
+		String REPS;	
 		if (Week == 1 || Week == 2) {
 			REPS = Double.toString(8);
 			return REPS;
@@ -106,7 +105,7 @@ public class Powerlifting extends JFrame {
 		    REPS = "3-5";
 		    return REPS;
 		}
-   }  
+	}  
    private static String[] DeadliftCalculation() {
 	   if (DeadsWeakness == "LockoutWeak" || DeadsWeakness == "LockoutModerate") {
 		   double d = Week - 1;
