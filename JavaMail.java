@@ -1,5 +1,4 @@
 import java.util.Properties;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -28,8 +27,8 @@ public class JavaMail {
 	}
 	
 	public void sendMail(String x) {
-		final String username = "mytalents13@gmail.com"; // enter your mail id
-		final String password = "Zman!!1204";// enter ur password
+		final String username = "config.MAIL_ID"; // enter your mail id
+		final String password = "config.PASSWORD";// enter ur password
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
@@ -52,15 +51,15 @@ public class JavaMail {
 			InternetAddress.parse(clientEmail));// whom u have to send mails that person id
 			message.setSubject(clientName);
 			BodyPart messageBodyPart = new MimeBodyPart();
-	        messageBodyPart.setText("");
-	        Multipart multipart = new MimeMultipart();
-	        multipart.addBodyPart(messageBodyPart);
-	        messageBodyPart = new MimeBodyPart();
-	        DataSource source = new FileDataSource(x);
-	        messageBodyPart.setDataHandler(new DataHandler(source));
-	        messageBodyPart.setFileName(x);
-	        multipart.addBodyPart(messageBodyPart);
-	        message.setContent(multipart);
+			messageBodyPart.setText("");
+			Multipart multipart = new MimeMultipart();
+			multipart.addBodyPart(messageBodyPart);
+			messageBodyPart = new MimeBodyPart();
+			DataSource source = new FileDataSource(x);
+			messageBodyPart.setDataHandler(new DataHandler(source));
+			messageBodyPart.setFileName(x);
+			multipart.addBodyPart(messageBodyPart);
+			message.setContent(multipart);
 			Transport.send(message);
 			System.out.println("Done");
 
